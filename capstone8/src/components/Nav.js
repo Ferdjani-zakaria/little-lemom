@@ -1,23 +1,24 @@
 import React from "react";
 import "./css/nav.css";
 import logo from "../assets/Logo .svg";
+import { Link } from "react";
 
 const Nav = () => {
     return (
-        <div className="navContainer">
+        <nav className="navContainer">
             <img src={logo} alt="logo" />
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#chicago">About</a>
                 </li>
                 <li>
-                    <a href="#">Menu</a>
+                    <a href="#specials">Menu</a>
                 </li>
                 <li>
-                    <a href="#">Reservations</a>
+                    <Link to="/booking">Reservations</Link>
                 </li>
                 <li>
                     <a href="#">Order Online</a>
@@ -26,7 +27,7 @@ const Nav = () => {
                     <a href="#">Login</a>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
 };
 

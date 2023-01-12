@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Hero = () => {
     return (
         <>
             <img src="#" alt="logo" />
@@ -8,4 +8,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Hero;

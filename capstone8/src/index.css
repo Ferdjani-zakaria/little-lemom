@@ -1,5 +1,55 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+:root {
+    --fontFamily-header: "Marzaki Text";
+    --fontFamily-p: "Karla";
+    --fontSize-title: 64px;
+    --fontSize-subTile: 40px;
+    --fontSize-sectionTitle: 20px;
+    --fontSize-p: 18px;
+    --fontSize-card-p: 16px;
+    --primary-color-1: #495e57;
+    --primary-color-2: #f4ce14;
+    --box-radius: 16px;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fontFamily-header);
+}
+
+h4,
+h5,
+h6 {
+    font-family: var(--fontFamily-p);
+}
+
+h1 {
+    font-size: var(--fontSize-header);
+}
+
+h2 {
+    font-size: var(--fontSize-subTile);
+}
+
+p,
+a {
+    font-size: var(--fontSize-p);
+    font-family: var(--fontFamily-p);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }
