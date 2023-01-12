@@ -1,9 +1,11 @@
 import React from "react";
+import "./css/nav.css";
+import logo from "../assets/Logo .svg";
 
 const Nav = () => {
     return (
-        <>
-            <img src="#" alt="logo" />
+        <div className="navContainer">
+            <img src={logo} alt="logo" />
             <ul>
                 <li>
                     <a href="#">Home</a>
@@ -24,7 +26,7 @@ const Nav = () => {
                     <a href="#">Login</a>
                 </li>
             </ul>
-        </>
+        </div>
     );
 };
 

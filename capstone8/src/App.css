@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+:root {
+    --fontFamily-header: "Marzaki Text";
+    --fontFamily-p: "Karla";
+    --fontSize-title: 64px;
+    --fontSize-subTile: 40px;
+    --fontSize-sectionTitle: 20px;
+    --fontSize-p: 18px;
+    --fontSize-card-p: 16px;
+    --primary-color-1: #495e57;
+    --primary-color-2: #f4ce14;
+    --box-radius: 16px;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3 {
+    font-family: var(--fontFamily-header);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h4,
+h5,
+h6 {
+    font-family: var(--fontFamily-p);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-size: var(--fontSize-header);
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+    font-size: var(--fontSize-subTile);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p,
+a {
+    font-size: var(--fontSize-p);
+    font-family: var(--fontFamily-p);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }

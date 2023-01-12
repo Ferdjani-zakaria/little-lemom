@@ -1,0 +1,19 @@
+.navContainer {
+    display: flex;
+    gap: 5rem;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navContainer ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navContainer a {
+    color: #000000;
+}

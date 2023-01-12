@@ -1,0 +1,26 @@
+.footer {
+    background-color: var(--primary-color-1);
+    width: 100%;
+}
+.footerContainer {
+    display: flex;
+    width: min(80%, 960px);
+    margin-inline: auto;
+    gap: 2rem;
+    padding: 1rem;
+}
+.footerContainer_info {
+    display: flex;
+    gap: min(8rem, 20%);
+    justify-content: center;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.footer-mainImg {
+    width: 240px;
+}
+
+.footerContainer a {
+    color: #ffffff;
+}
