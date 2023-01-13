@@ -1,32 +1,33 @@
 import React from "react";
-import "./css/footer.css";
-import restaurant from "../assets/restaurant.jpg";
+import "./footer.css";
+import restaurant from "../../assets/restaurant.jpg";
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
-        <div className="footer">
-            <div class="footerContainer">
+        <section className="footerSection">
+            <div class="footer">
                 <img src={restaurant} alt="logo" className="footer-mainImg" />
-                <div className="footerContainer_info">
+                <div className="footer_info">
                     <div>
                         <h4>Doormat Navigation</h4>
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <a href="#">About</a>
+                                <Link to="/">About</Link>
                             </li>
                             <li>
-                                <a href="#">Menu</a>
+                                <Link to="/">Menu</Link>
                             </li>
                             <li>
-                                <a href="#">Reservations</a>
+                                <Link to="/booking">Reservations</Link>
                             </li>
                             <li>
-                                <a href="#">Order Online</a>
+                                <Link to="/orderOnline">Order Online</Link>
                             </li>
                             <li>
-                                <a href="#">Login</a>
+                                <Link to="/">Login</Link>
                             </li>
                         </ul>
                     </div>
@@ -60,7 +61,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

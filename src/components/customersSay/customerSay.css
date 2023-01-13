@@ -1,0 +1,19 @@
+.testimonialsSection {
+    width: 100%;
+    background-color: var(--primary-color-1);
+    padding-block: 2rem;
+}
+.testimonials {
+    width: min(75%, 840px);
+    margin-inline: auto;
+    text-align: center;
+}
+.testimoniCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+.inline-b {
+    display: inline-block;
+}

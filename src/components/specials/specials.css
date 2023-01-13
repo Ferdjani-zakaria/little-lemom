@@ -1,0 +1,18 @@
+.specialsSection {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    align-items: stretch;
+    gap: min(2rem, 25%);
+    margin-top: 2rem;
+}
+
+.specials {
+    width: min(75%, 840px);
+    margin-inline: auto;
+}

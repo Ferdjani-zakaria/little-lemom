@@ -1,0 +1,57 @@
+.chicagoSection {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 9rem;
+}
+.chicago {
+    width: min(75%, 840px);
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chicago-title {
+    color: var(--primary-color-2);
+    padding-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1;
+}
+.chicago-title + h2 {
+    font-size: var(--fontSize-subTitle);
+    padding-top: 0;
+    margin-top: 0;
+    line-height: 0.5;
+}
+.chicago img {
+    max-width: 100%;
+}
+
+.chicago_text {
+    width: 45%;
+}
+
+.chicago_imgContainer {
+    position: relative;
+    width: 38%;
+}
+
+.chicago .chefImg1 {
+    position: absolute;
+    top: 8rem;
+    left: -35%;
+    width: 100%;
+    max-height: 125%;
+    object-fit: cover;
+    border-radius: var(--box-radius);
+}
+.chicago .chefImg2 {
+    position: absolute;
+    top: 0rem;
+    left: 25%;
+    width: 100%;
+    max-height: 125%;
+    object-fit: cover;
+    border-radius: var(--box-radius);
+}

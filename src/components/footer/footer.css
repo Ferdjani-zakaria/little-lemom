@@ -1,18 +1,19 @@
-.footer {
+.footerSection {
     background-color: var(--primary-color-1);
     width: 100%;
+    padding-block: 2rem;
 }
-.footerContainer {
+.footer {
     display: flex;
-    width: min(80%, 960px);
+    width: min(75%, 840px);
     margin-inline: auto;
     gap: 2rem;
-    padding: 1rem;
+    padding-inline: 1rem;
 }
-.footerContainer_info {
+.footer_info {
     display: flex;
     gap: min(8rem, 20%);
-    justify-content: center;
+    justify-content: space-evenly;
     flex-grow: 1;
     line-height: 1.5;
 }
@@ -21,6 +22,14 @@
     width: 240px;
 }
 
+.footer h4 {
+    margin-top: 0;
+}
+
 .footerContainer a {
     color: #ffffff;
+}
+
+.footerContainer ul {
+    padding: 0;
 }

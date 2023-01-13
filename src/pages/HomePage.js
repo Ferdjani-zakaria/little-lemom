@@ -1,17 +1,17 @@
 import React from "react";
-import Hero from "../components/Hero";
-import Specials from "../components/Specials";
-import CustomersSay from "../components/CustomersSay";
-import Chicago from "../components/Chicago";
+import Hero from "../components/hero/Hero";
+import Specials from "../components/specials/Specials";
+import CustomersSay from "../components/customersSay/CustomersSay";
+import Chicago from "../components/chicago/Chicago";
 
 function HomePage() {
     return (
-        <>
+        <React.Fragment>
             <Hero />
             <Specials />
             <CustomersSay />
             <Chicago />
-        </>
+        </React.Fragment>
     );
 }
 

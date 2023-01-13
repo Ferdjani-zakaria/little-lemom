@@ -1,0 +1,5 @@
+.testimonialCard {
+    background-color: #ffffff;
+    flex-grow: 1;
+    min-width: 5rem;
+}
