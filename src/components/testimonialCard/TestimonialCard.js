@@ -1,6 +1,6 @@
 import React from "react";
 import "./testimonialCard.css";
-function TestimonialCard() {
+function TestimonialCard(props) {
     return (
         <div className="testimonialCard">
             <p>Rating</p>
