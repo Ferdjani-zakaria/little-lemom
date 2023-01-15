@@ -1,7 +1,5 @@
 .footerSection {
-    background-color: var(--primary-color-1);
-    width: 100%;
-    padding-block: 2rem;
+    background-color: var(--secondary-color-4);
 }
 .footer {
     display: flex;
@@ -24,12 +22,13 @@
 
 .footer h4 {
     margin-top: 0;
+    color: var(--secondary-color-2);
 }
 
-.footerContainer a {
+.footerSection a {
     color: #ffffff;
 }
 
-.footerContainer ul {
+.footerSection ul {
     padding: 0;
 }

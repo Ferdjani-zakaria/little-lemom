@@ -1,30 +1,26 @@
 import React from "react";
-
+import "./bookingPage.css";
+import ReservationForm from "../components/reservation_form/ReservationForm";
+import restaurant from "../assets/restaurant.jpg";
 function BookingPage() {
     return (
-        <div>
-            <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
-                <label htmlFor="res-date">Choose date</label>
-                <input type="date" id="res-date" />
-                <label htmlFor="res-time">Choose time</label>
-                <select id="res-time ">
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                </select>
-                <label htmlFor="guests">Number of guests</label>
-                <input type="number" placeholder={1} min={1} max={10} id="guests" />
-                <label htmlFor="occasion">Occasion</label>
-                <select id="occasion">
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                </select>
-                <input type="submit" defaultValue="Make Your reservation" />
-            </form>
-        </div>
+        <section
+            className="bookingSection"
+            style={{
+                backgroundImage: `url(${restaurant})`,
+            }}
+        >
+            <div style={{ width: "min(75%, 840px)", marginInline: "auto" }}>
+                <div style={{ padding: "1rem", backgroundColor: "var(--secondary-color-4)", opacity: "0.95" }}>
+                    <h1 className="hero-title">Little lemon</h1>
+                    <h2>Chicago</h2>
+                </div>
+                <div className="formContainer">
+                    <h2 style={{ marginTop: "10px" }}>Reserve your Table</h2>
+                    <ReservationForm />
+                </div>
+            </div>
+        </section>
     );
 }
 

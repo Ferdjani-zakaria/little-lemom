@@ -1,7 +1,5 @@
 .heroSection {
     background-color: var(--primary-color-1);
-    width: 100%;
-    padding-block: 2rem;
 }
 .hero {
     width: min(75%, 840px);
@@ -9,6 +7,10 @@
     color: #ffffff;
     display: flex;
     justify-content: space-between;
+}
+
+.hero p {
+    color: var(--secondary-color-3);
 }
 
 .hero-title {
@@ -24,6 +26,7 @@
     padding-top: 0;
     margin-top: 0;
     line-height: 0.5;
+    font-weight: 400;
 }
 .hero img {
     max-width: 100%;
@@ -40,10 +43,10 @@
 
 .hero .foodImg {
     position: absolute;
-    top: 1rem;
-    left: 0;
-    width: 100%;
+    top: 15%;
+    right: 0;
+    width: 80%;
     max-height: 125%;
-    object-fit: cover;
+    object-fit: fills;
     border-radius: var(--box-radius);
 }

@@ -1,7 +1,5 @@
 .testimonialsSection {
-    width: 100%;
     background-color: var(--primary-color-1);
-    padding-block: 2rem;
 }
 .testimonials {
     width: min(75%, 840px);

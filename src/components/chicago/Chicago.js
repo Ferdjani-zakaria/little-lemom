@@ -5,7 +5,7 @@ import restaurantChef2 from "../../assets/Mario and Adrian A.jpg";
 
 function Chicago() {
     return (
-        <section className="chicagoSection">
+        <section className="chicagoSection" id="about">
             <div className="chicago">
                 <div className="chicago_text">
                     <h1 className="chicago-title">Little lemon</h1>

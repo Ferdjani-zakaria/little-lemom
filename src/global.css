@@ -10,10 +10,10 @@
     --fontSize-card-p: 16px;
     --primary-color-1: #495e57;
     --primary-color-2: #f4ce14;
-    --secondary-color1: #ee9972;
-    --secondary-color2: #fbdabb;
-    --secondary-color3: #edefee;
-    --secondary-color4: #333333;
+    --secondary-color-1: #ee9972;
+    --secondary-color-2: #fbdabb;
+    --secondary-color-3: #edefee;
+    --secondary-color-4: #333333;
     --box-radius: 16px;
 }
 
@@ -28,6 +28,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+section {
+    padding-block: 4rem;
+    width: 100%;
 }
 
 h1,
@@ -54,6 +59,7 @@ p,
 a {
     font-size: var(--fontSize-p);
     font-family: var(--fontFamily-karla);
+    color: var(--secondary-color-4);
 }
 
 a {
@@ -73,17 +79,42 @@ img {
 
 .prime-btn {
     border-radius: var(--box-radius);
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     min-width: 12rem;
     font-weight: bold;
     background-color: var(--primary-color-2);
     border: none;
-    box-shadow: 0 2px 10px black;
+    box-shadow: 0 2px 10px var(--secondary-color-4);
     font-size: var(--fontSize-p);
     cursor: pointer;
+    font-family: var(--fontFamily-karla);
+    color: var(--secondary-color-4);
 }
+
+.prime-btn:hover {
+    color: var(--secondary-color-3);
+}
+.prime-btn:active {
+    background-color: var(--secondary-color-4);
+    box-shadow: 0 2px 8px var(--secondary-color-4);
+}
+
 .flex-between-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+input,
+select {
+    padding: 0.5rem 1rem;
+    font-family: var(--fontFamily-karla);
+    border: 1px solid var(--secondary-color-1);
+    box-shadow: 0px 0px 5px var(--secondary-color-1);
+    font-size: var(--fontSize-p);
+}
+
+label {
+    font-family: var(--fontFamily-karla);
+    font-size: var(--fontSize-p);
 }
