@@ -40,7 +40,7 @@ function BookingPage() {
                     <h2>Chicago</h2>
                 </div>
                 <div className="formContainer">
-                    <h2 style={{ marginTop: "10px" }}>Reserve your Table</h2>
+                    <h2 style={{ marginTop: "10px" }}>Book your Table</h2>
                     <ReservationForm times={availableTimes} submit={dispatch} />
                 </div>
             </div>
