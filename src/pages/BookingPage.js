@@ -1,8 +1,32 @@
 import React from "react";
+import { useReducer } from "react";
 import "./bookingPage.css";
 import ReservationForm from "../components/reservation_form/ReservationForm";
 import restaurant from "../assets/restaurant.jpg";
+
 function BookingPage() {
+    const reducer = (availableTimes, action) => {
+        switch (action.type) {
+            case "initializeTimes":
+                return [initializeTimes()];
+            case "updateChange":
+                return [updateChange(action.payload.date)];
+            default:
+                return [availableTimes];
+        }
+    };
+    const [availableTimes, dispatch] = useReducer(reducer, [{ sat: true, san: true, mon: true }]);
+
+    const updateChange = (dateSelected) => {
+        const newAvailableTimes = { ...availableTimes };
+        newAvailableTimes.dateSelected = !newAvailableTimes.dateSelected;
+        return newAvailableTimes;
+    };
+
+    const initializeTimes = () => {
+        return { sat: true, san: true, mon: true };
+    };
+
     return (
         <section
             className="bookingSection"
@@ -17,7 +41,7 @@ function BookingPage() {
                 </div>
                 <div className="formContainer">
                     <h2 style={{ marginTop: "10px" }}>Reserve your Table</h2>
-                    <ReservationForm />
+                    <ReservationForm times={availableTimes} submit={dispatch} />
                 </div>
             </div>
         </section>
