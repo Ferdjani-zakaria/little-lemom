@@ -1,7 +1,7 @@
 import React from "react";
 import { useReducer } from "react";
 import "./bookingPage.css";
-import ReservationForm from "../components/reservation_form/ReservationForm";
+import BookingForm from "../components/bookingForm/BookingForm";
 import restaurant from "../assets/restaurant.jpg";
 
 function BookingPage() {
@@ -41,7 +41,7 @@ function BookingPage() {
                 </div>
                 <div className="formContainer">
                     <h2 style={{ marginTop: "10px" }}>Book your Table</h2>
-                    <ReservationForm times={availableTimes} submit={dispatch} />
+                    <BookingForm times={availableTimes} submit={dispatch} />
                 </div>
             </div>
         </section>
