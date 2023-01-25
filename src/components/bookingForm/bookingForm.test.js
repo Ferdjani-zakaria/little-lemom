@@ -1,40 +1,43 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
 
 describe("book a table", () => {
-    test("4 labels need to be displayed", () => {
-        const dispatch = jest.fn();
-        const submitForm = jest.fn();
-        render(<BookingForm availableTimes={[""]} submit={dispatch} checkForm={submitForm} />);
+    let array = ["17:00", "18:00"];
+    const today = new Date();
 
-        const headingElement_1 = screen.getByText("Choose date:");
-        const headingElement_2 = screen.getByText("Choose time:");
-        const headingElement_3 = screen.getByText("Number of guests:");
-        const headingElement_4 = screen.getByText("Occasion:");
-
-        expect(headingElement_1).toBeInTheDocument();
-        expect(headingElement_2).toBeInTheDocument();
-        expect(headingElement_3).toBeInTheDocument();
-        expect(headingElement_4).toBeInTheDocument();
-    });
-
+    const submitForm = jest.fn();
+    const dispatch = jest.fn();
     test("initialize data in the inputs", () => {
-        const dispatch = jest.fn();
-        const submitForm = jest.fn();
-        render(<BookingForm availableTimes={[""]} submit={dispatch} checkForm={submitForm} />);
-
-        const today = new Date();
+        render(<BookingForm availableTimes={array} submit={dispatch} />);
 
         const inputElement_1 = screen.getByLabelText("Choose date:");
-        const inputElement_2 = screen.getByLabelText("Choose time:");
-        const inputElement_3 = screen.getByLabelText("Number of guests:");
-        const inputElement_4 = screen.getByLabelText("Occasion:");
+        const inputElement_2 = screen.getAllByRole("option");
 
         expect(inputElement_1).toHaveValue(
             `${today.getFullYear()}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`
         );
-        expect(inputElement_2).toHaveValue("");
-        expect(inputElement_3).toHaveValue(1);
-        expect(inputElement_4).toHaveValue("No occasion");
+        expect(inputElement_2.length).toBe(5);
+        expect(dispatch).toHaveBeenCalledTimes(1);
+    });
+
+    test("updating the time options", () => {
+        render(<BookingForm availableTimes={array} submit={dispatch} />);
+
+        const inputElement_1 = screen.getByLabelText("Choose date:");
+        const inputElement_2 = screen.getAllByRole("option");
+
+        expect(inputElement_2.length).toBe(5);
+        expect(dispatch).toHaveBeenCalledTimes(1);
+        fireEvent.change(inputElement_1, { target: { value: "2023-02-02" } });
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(inputElement_2.length).toBe(5);
+    });
+
+    test("submit the form", () => {
+        render(<BookingForm availableTimes={array} submit={dispatch} checkForm={submitForm} />);
+
+        const button_elem = screen.getByRole("button");
+        fireEvent.click(button_elem);
+        expect(submitForm).toHaveBeenCalled();
     });
 });

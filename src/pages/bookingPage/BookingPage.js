@@ -9,7 +9,7 @@ import { fetchAPI, submitAPI } from "../../apis/api";
 const reducer = (availableTimes, action) => {
     switch (action.type) {
         case "initializeTimes":
-            return [...initializeTimes(action.payload.today)];
+            return [...initializeTimes(action.payload.day)];
         case "updateChange":
             return [...updateChange(action.payload.daySelected)];
         default:
@@ -17,8 +17,8 @@ const reducer = (availableTimes, action) => {
     }
 };
 
-const initializeTimes = (today) => {
-    const dayOfTheMonth = today.getDate();
+const initializeTimes = (day) => {
+    const dayOfTheMonth = day.getDate();
     return fetchAPI(dayOfTheMonth);
 };
 
