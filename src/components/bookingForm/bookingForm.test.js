@@ -7,6 +7,10 @@ describe("book a table", () => {
 
     const submitForm = jest.fn();
     const dispatch = jest.fn();
+
+    beforeEach(() => {
+        window.localStorage.clear();
+    });
     test("initialize data in the inputs", () => {
         render(<BookingForm availableTimes={array} submit={dispatch} />);
 
@@ -33,11 +37,21 @@ describe("book a table", () => {
         expect(inputElement_2.length).toBe(5);
     });
 
-    test("submit the form", () => {
+    test("submit the form to localStorage", () => {
+        Storage.prototype.setItem = jest.fn();
         render(<BookingForm availableTimes={array} submit={dispatch} checkForm={submitForm} />);
 
         const button_elem = screen.getByRole("button");
+        const inputElement_1 = screen.getByLabelText("Choose date:");
+        const inputElement_3 = screen.getByLabelText("Number of guests:");
+
+        fireEvent.change(inputElement_1, { target: { value: "2023-02-02" } });
+        fireEvent.change(inputElement_3, { target: { value: 4 } });
         fireEvent.click(button_elem);
         expect(submitForm).toHaveBeenCalled();
+        expect(localStorage.setItem).toHaveBeenCalledWith(
+            "reservation",
+            '{"date":"2023-02-02","time":"17:00","guests":4,"occasion":"no occasion"}'
+        );
     });
 });

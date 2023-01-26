@@ -17,7 +17,7 @@ function BookingForm(props) {
 
     useEffect(() => {
         submit({ type: "initializeTimes", payload: { day: today } });
-    }, []);
+    }, [submit]);
 
     const handleChange = (e) => {
         if (e.target.id === "res-date") {
@@ -53,16 +53,7 @@ function BookingForm(props) {
                 ))}
             </select>
             <label htmlFor="guests">Number of guests:</label>
-            <input
-                value={reservation.guests}
-                type="number"
-                placeholder={1}
-                min={1}
-                max={10}
-                id="guests"
-                defaultValue={1}
-                onChange={handleChange}
-            />
+            <input value={reservation.guests} type="number" placeholder={1} min={1} max={10} id="guests" onChange={handleChange} />
             <label htmlFor="occasion">Occasion:</label>
             <select value={reservation.occasion} id="occasion" onChange={handleChange}>
                 <option defaultChecked>No occasion</option>
