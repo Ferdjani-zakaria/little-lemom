@@ -10,7 +10,7 @@ function BookingForm(props) {
 
     const [reservation, setReservation] = useState({
         date: `${today.getFullYear()}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`,
-        time: availableTimes[0],
+        time: "",
         guests: 1,
         occasion: "no occasion",
     });
@@ -47,18 +47,25 @@ function BookingForm(props) {
             <label htmlFor="res-date">Choose date:</label>
             <input value={reservation.date} type="date" id="res-date" onChange={handleChange} />
             <label htmlFor="res-time">Choose time:</label>
-            <select value={reservation.time} id="res-time" onChange={handleChange}>
+            <select value={reservation.time} id="res-time" onChange={handleChange} required>
+                <option key={0} defaultChecked disabled value="">
+                    Select Time
+                </option>
                 {availableTimes.map((a, index) => (
-                    <option key={index}>{a}</option>
+                    <option key={index + 1} value={a}>
+                        {a}
+                    </option>
                 ))}
             </select>
             <label htmlFor="guests">Number of guests:</label>
             <input value={reservation.guests} type="number" placeholder={1} min={1} max={10} id="guests" onChange={handleChange} />
             <label htmlFor="occasion">Occasion:</label>
             <select value={reservation.occasion} id="occasion" onChange={handleChange}>
-                <option defaultChecked>No occasion</option>
-                <option>Birthday</option>
-                <option>Anniversary</option>
+                <option defaultChecked value="no occasion">
+                    No occasion
+                </option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
             </select>
             <button type="submit" className="prime-btn">
                 Make your reservation
