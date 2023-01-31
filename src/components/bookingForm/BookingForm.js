@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const today = new Date();
-
 function BookingForm(props) {
     const availableTimes = props.availableTimes;
     const submit = props.submit;
     const checkForm = props.checkForm;
+    const today = new Date();
 
     const [reservation, setReservation] = useState({
         date: `${today.getFullYear()}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`,
@@ -15,13 +14,15 @@ function BookingForm(props) {
         occasion: "no occasion",
     });
 
+    const isDisabled = reservation.time === "";
+
     useEffect(() => {
-        submit({ type: "initializeTimes", payload: { day: today } });
+        submit({ type: "initializeTimes", payload: { day: today.getDate() } });
     }, [submit]);
 
     const handleChange = (e) => {
         if (e.target.id === "res-date") {
-            setReservation({ ...reservation, date: e.target.value });
+            setReservation({ ...reservation, date: e.target.value, time: "" });
             submit({ type: "updateChange", payload: { daySelected: new Date(e.target.value).getDate() } });
         }
         if (e.target.id === "res-time") {
@@ -37,8 +38,8 @@ function BookingForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem("reservation", JSON.stringify(reservation));
         checkForm(reservation);
+        localStorage.setItem("reservation", JSON.stringify(reservation));
         setReservation({ date: "", time: "", guests: "1", occasion: "no occasion" });
     };
 
@@ -58,7 +59,7 @@ function BookingForm(props) {
                 ))}
             </select>
             <label htmlFor="guests">Number of guests:</label>
-            <input value={reservation.guests} type="number" placeholder={1} min={1} max={10} id="guests" onChange={handleChange} />
+            <input value={reservation.guests} type="number" placeholder={1} min={1} max={10} id="guests" onChange={handleChange} required />
             <label htmlFor="occasion">Occasion:</label>
             <select value={reservation.occasion} id="occasion" onChange={handleChange}>
                 <option defaultChecked value="no occasion">
@@ -67,7 +68,7 @@ function BookingForm(props) {
                 <option value="birthday">Birthday</option>
                 <option value="anniversary">Anniversary</option>
             </select>
-            <button type="submit" className="prime-btn">
+            <button type="submit" className="prime-btn" disabled={isDisabled}>
                 Make your reservation
             </button>
         </form>

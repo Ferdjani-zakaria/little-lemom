@@ -18,7 +18,7 @@ const reducer = (availableTimes, action) => {
 };
 
 const initializeTimes = (day) => {
-    const dayOfTheMonth = day.getDate();
+    const dayOfTheMonth = day;
     return fetchAPI(dayOfTheMonth);
 };
 

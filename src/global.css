@@ -98,6 +98,9 @@ img {
     background-color: var(--secondary-color-4);
     box-shadow: 0 2px 8px var(--secondary-color-4);
 }
+.prime-btn:disabled {
+    background-color: var(--secondary-color-3);
+}
 
 .flex-between-center {
     display: flex;

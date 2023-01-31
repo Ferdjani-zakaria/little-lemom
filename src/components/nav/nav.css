@@ -32,4 +32,10 @@
     color: #000000;
     font-weight: bold;
     font-size: 16px;
+    padding-bottom: 1.4rem;
+}
+
+.navContainer a:hover {
+    color: var(--primary-color-2);
+    border-bottom: 4px inset var(--primary-color-2);
 }

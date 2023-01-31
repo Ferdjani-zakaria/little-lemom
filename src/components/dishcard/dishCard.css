@@ -5,6 +5,10 @@
     overflow: hidden;
     box-shadow: 0 2px 10px #c6c6c6;
 }
+.dishCard:hover {
+    box-shadow: 1px 5px 8pxx var(--primary-color-2);
+}
+
 .dishCard p {
     padding-block: 0;
     margin-block: 0;
